@@ -1,5 +1,127 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
+  inline-size: clamp(375px, 100%, 1024px);
+  block-size: clamp(668px, 100vh, 1024px);
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+}
+ /* можно задать фон самой странице, тогда даже при превышении тянется */
+
+.header {
+  display: grid;
+  inline-size: 100%;
+  block-size: 100%;
+  grid-template-columns: 1fr;
+  grid-template-rows: min-content calc(33% - 36px) 1fr calc(37% - 10px);
+  /* grid-template-areas: 
+  ". decorated"
+  "menu menu"
+  "title title"
+  "description description"; */
+  padding: 10px;
+  color: var(--accent-color);
+  font-family: var(--text-font-family), sans-serif;
+  font-weight: var(--header-title-font-weight);
+  font-size: var(--header-description-font-size);
+  background-image: url(../images/cover-image-dark.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.header::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  left: 10px;
+  bottom: 10px;
+  border-bottom: solid 1px var(--accent-color);
+  border-left: solid 1px var(--accent-color);
+}
+
+.header::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: 10px;
+  top: 10px;
+  border-top: solid 1px var(--accent-color);
+  border-right: solid 1px var(--accent-color);
+}
+
+
+.decorated__for-dark-theme {
+  /* grid-area: decorated; */
+  justify-self: end;
+  position: relative;
+  padding-inline-end: 28px;
+  text-transform: uppercase;
+  font-weight: var(--header-button-font-weight);
+}
+
+.decorated__for-dark-theme::after {
+  content: "";
+  display: block;
+  width: 9px;
+  height: 9px;
+  top: 8px;
+  right: 9px;
+  position: absolute;
+  box-shadow: 0px 0px 4px 2px var(--accent-color);
+  background-color: var(--accent-color);
+  border-radius: 50%;
+}
+
+.header__theme-menu {
+  justify-self: end;
+  align-self: center;
+  /* grid-area: menu; */
+}
+
+.header__theme-menu-list {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.header__theme-menu-button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  text-transform: lowercase;
+  display: block;
+  padding: 1.5px 13px;
+}
+
+.header__theme-menu-button_active {
+  outline: 1px solid var(--accent-color);
+  pointer-events: none;
+}
+
+.header__title {
+  justify-self: start;
+  align-self: end;
+  /* grid-area: title; */
+  text-shadow: 4px 4px 0 var(--accent-color);
+  font-family: var(--text-font-family), sans-serif;
+  font-weight: var(--header-title-font-weight);
+  color: var(--header-title-color);
+  font-size: var(--header-title-font-size);
+  line-height: 83%;
+}
+
+.header__description {
+  /* grid-area: description; */
+  justify-self: end;
+  align-self: center;
+  display: block;
+  inline-size: clamp(355px, 50% ,491px);
+  block-size: min-content;
+  background-color: var(--accent-color);
+  color: var(--header-description-color);
 }
