@@ -17,6 +17,7 @@
   --accent-title-color: #ffc2e6;
 
   --bg-image: url(../images/cover-image-light.png);
+  --bg-color: #ffeef6;
 
   --section-description-color: #353430;
 
@@ -43,6 +44,9 @@
     --bg-image: url(../images/cover-image-light.png);
 
     --section-description-color: #353430;
+    --bg-color: #ffeef6;
+
+    --hover-color: #32312d66;
   }
 
   .theme-light .page .section__title {

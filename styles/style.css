@@ -7,7 +7,7 @@
   font-weight: var(--title-font-weight);
   font-size: var(--text-font-size);
   line-height: var(--text-line-height);
-  background-color: #000028;
+  background-color: var(--bg-color);
   background-image: var(--bg-image);
   background-repeat: no-repeat;
   background-position: center;
