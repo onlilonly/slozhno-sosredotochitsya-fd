@@ -19,6 +19,8 @@
   --bg-image: url(../images/cover-image-light.png);
 
   --section-description-color: #353430;
+
+  --hover-color: #32312d66;
 }
 
 .theme-light .page .decorated__for-dark-theme {

@@ -25,6 +25,8 @@
   --bg-image: url(../images/cover-image-dark.png);
 
   --section-description-color: #f1b2ce;
+
+  --hover-color: #ff007066;
 }
 
 /* .theme-dark .page {
