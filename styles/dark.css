@@ -11,6 +11,7 @@
   */
   --accent-color: #ff0070;
   --decorated-color: #ff0070;
+  --decorated-display: block;
 
   --title-font-weight: 700;
   --title-color: #000028;
@@ -25,6 +26,7 @@
   --bg-image: url(../images/cover-image-dark.png);
   --bg-color: #000028;
 
+  --section-title-color: #ff0070;
   --section-description-color: #f1b2ce;
 
   --hover-color: #ff007066;

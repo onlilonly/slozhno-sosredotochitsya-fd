@@ -1,7 +1,7 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  padding: 10px;
+  padding: 0 10px;
   color: var(--accent-color);
   font-family: var(--text-font-family), sans-serif;
   font-weight: var(--title-font-weight);
@@ -23,15 +23,15 @@
   grid-template-columns: 1fr;
   grid-template-rows: repeat(3, 1fr);
   gap: 54px;
-  padding-block-end: 20px;
   inline-size: 100%;
-  block-size: clamp(668px, 100vh, 1024px);
+  block-size: 100vh;
+  min-block-size: 668px;
 }
 
-.header::before {
+.decorated-zone::before {
   content: "";
   position: absolute;
-  bottom: 20px;
+  bottom: 10px;
   left: 0;
   display: block;
   width: 25px;
@@ -40,10 +40,10 @@
   border-left: solid 1px var(--decorated-color);
 }
 
-.header::after {
+.decorated-zone::after {
   content: "";
   position: absolute;
-  top: 0;
+  top: 10px;
   right: 0;
   display: block;
   width: 25px;
@@ -54,7 +54,9 @@
 
 .decorated__for-dark-theme {
   position: absolute;
+  display: var(--decorated-display);
   justify-self: end;
+  top: 10px;
   padding-inline-end: 28px;
   font-weight: var(--text-font-weight);
   text-transform: uppercase;
@@ -65,7 +67,7 @@
   position: absolute;
   top: 8px;
   right: 9px;
-  display: block;
+  display: var(--decorated-display);
   width: 9px;
   height: 9px;
   border-radius: 50%;
@@ -140,8 +142,8 @@
 .content {
   display: grid;
   gap: 40px;
-  margin-block-start: 29px;
-  margin-block-end: 30px;
+  margin-block-start: 40px;
+  margin-block-end: 40px;
 }
 
 .section__content {
@@ -150,7 +152,7 @@
 }
 
 .section__title {
-  color: inherit;
+  color: var(--section-title-color);
   font-weight: inherit;
   font-size: inherit;
 }
@@ -182,6 +184,11 @@
 
 .section__link:focus-visible {
   outline: 1px solid var(--section-description-color);
+}
+
+.advice__list {
+  display: flex;
+  flex-direction: column;
 }
 
 .section__advice__item {
@@ -228,33 +235,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-block-start: 20px;
   inline-size: 100%;
-  block-size: clamp(668px, 100vh, 1024px);
-}
-
-.footer::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  display: block;
-  width: 25px;
-  height: 25px;
-  border-bottom: solid 1px var(--decorated-color);
-  border-left: solid 1px var(--decorated-color);
-}
-
-.footer::after {
-  content: "";
-  position: absolute;
-  top: 20px;
-  right: 0;
-  display: block;
-  width: 25px;
-  height: 25px;
-  border-top: solid 1px var(--decorated-color);
-  border-right: solid 1px var(--decorated-color);
+  block-size: 100vh;
+  min-block-size: 668px;
 }
 
 .footer__title {
@@ -267,16 +250,23 @@
 
 @media (width >= 768px) {
   .page {
-    padding: 20px;
+    padding: 0 20px;
   }
 
   .header {
-    gap: 70px;
-    padding-block-end: 38px;
+    gap: 63px;
   }
 
-  .header::before {
-    bottom: 40px;
+  .decorated-zone::before {
+    bottom: 20px;
+  }
+
+  .decorated-zone::after {
+    top: 20px;
+  }
+
+  .decorated__for-dark-theme {
+    top: 20px;
   }
 
   .header__title {
@@ -286,8 +276,8 @@
 
   .content {
     gap: 70px;
-    margin-block-start: 40px;
-    margin-block-end: 40px;
+    margin-block-start: 60px;
+    margin-block-end: 60px;
   }
 
   .section__content {
@@ -325,20 +315,13 @@
     grid-column: span 2;
     grid-row: span 2;
   }
-
-  .footer {
-    padding-block-start: 40px;
-  }
-
-  .footer::after {
-    top: 40px;
-  }
 }
 
 @media (width >= 1024px) {
   .header__theme-menu {
     justify-self: center;
     align-self: baseline;
+    margin-block-start: 20px;
   }
 
   .header__theme-menu-list {
@@ -346,7 +329,7 @@
   }
 
   .header__description {
-    margin-block-start: 10px;
+    margin-block-start: 8px;
   }
 
   .section__advice:not(:has(.custom-advice)) {
